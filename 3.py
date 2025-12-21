@@ -108,7 +108,7 @@ def print_banner():
 ⣿⣿⣿⣿⣿⣷⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡌⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 
                            
-                     COPYRIGHT BY ZH W TH                         
+                     COPYRIGHT BY MẠNH DŨNG                       
 """
     print_gradient(banner)
 
@@ -818,7 +818,7 @@ def start_multiple_accounts():
     # Hiển thị banner
     print_banner()
     
-    print_header("🔥 𝗣𝗵𝗶𝗲̂𝗻 𝗕𝗮̉𝗻 𝗡𝗮̂𝗻𝗴 𝗖𝗮𝗼 𝗠𝗼̛́𝗶 𝗡𝗵𝗮̂́𝘁 𝗕𝘆 𝗭𝗵 𝗪 𝗧𝗵 ( 𝗙𝗿𝗼𝗺 : 𝗔𝗻𝗵 𝗘𝗺 𝗛𝗼𝘁 𝗔𝗽𝗽")
+    print_header("𝙏𝙤𝙤𝙡 𝘽𝙮 𝙈𝙙𝙪𝙣𝙜 🧸")
     
     try:
         num_accounts = int(input(gradient_text("💠 Nhập số lượng acc muốn chạy: ", [(0,255,0), (0,0,255)])))
@@ -994,3 +994,4 @@ def start_multiple_accounts():
 
 if __name__ == "__main__":
     start_multiple_accounts()
+
