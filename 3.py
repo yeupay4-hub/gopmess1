@@ -283,7 +283,7 @@ class MQTTManager:
     
     def _on_connect(self, client, userdata, flags, rc, properties=None):
         if rc == 0:
-            print_color("✅ Tool War Chỉ Từ 50k", "success")
+            print_color("✅ Tool War Chỉ Từ Free", "success")
             self.connected = True
         else:
             print_color(f"❌ Kết nối MQTT thất bại với mã: {rc}", "error")
@@ -464,7 +464,7 @@ class Messenger:
         try:
             self.mqtt_manager = MQTTManager(self.cookie, self.user_id)
             if self.mqtt_manager.connect():
-                print_color("✅ Liên Hệ Admin: Ng Quang Huy, Sdt: 0868371089", "success")
+                print_color("✅ Mdung HotWar", "success")
                 return True
             else:
                 print_color("⚠️ Không thể kết nối MQTT, sẽ sử dụng phương thức gửi thông thường", "warning")
@@ -780,7 +780,7 @@ def start_spam(cookie, account_name, user_id, thread_ids, thread_names, delay, m
         
         # Hiển thị thông tin về phương thức gửi
         if messenger.mqtt_manager and messenger.mqtt_manager.connected:
-            print_color(f"🎯 {account_name}: Phải Đẹp Trai Như Trọng Tấn ", "cyan")
+            print_color(f"- Bắt đầu tag -> {account_name}:", "cyan")
         else:
             print_color(f"⚠️ {account_name}: Sử dụng phương thức gửi thông thường", "warning")
         
@@ -994,4 +994,5 @@ def start_multiple_accounts():
 
 if __name__ == "__main__":
     start_multiple_accounts()
+
 
