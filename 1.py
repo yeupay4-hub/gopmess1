@@ -2224,7 +2224,7 @@ def publish_messages(broker, port, topic_base, recipient_id, file_txt, delay):
         
 if __name__ == "__main__":
     try:
-        print("=== Chế độ xử lý tin nhắn ===")
+        print("=== Tool War Mess Đa Chức Năng By Mdung💤 ===")
         print("1. Treo Bình Thường")
         print("2. Treo danh bạ (share contact)")
         print("3. Treo share link (URL từ UID)")
@@ -2440,3 +2440,4 @@ if __name__ == "__main__":
         print("\n[*] Dừng chương trình.")
     except Exception as e:
         print(f"[!] Lỗi: {str(e)}")
+
