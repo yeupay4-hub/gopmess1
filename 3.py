@@ -254,7 +254,6 @@ class MQTTManager:
     
     def _on_connect(self, client, userdata, flags, rc, properties=None):
         if rc == 0:
-            print_color("✅ Tool War 30k", "success")
             self.connected = True
         else:
             print_color(f"❌ Kết nối MQTT thất bại với mã: {rc}", "error")
@@ -965,6 +964,7 @@ def start_multiple_accounts():
 
 if __name__ == "__main__":
     start_multiple_accounts()
+
 
 
 
