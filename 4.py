@@ -7,38 +7,21 @@ import base64
 import uuid
 import time
 from datetime import datetime
-import os
-import sys
 import platform
 
 try:
-    from pystyle import Add,Center,Anime,Colors,Colorate,Write,System
+    from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 except:
     os.system('pip install pystyle requests platform colorama beautifulsoup4 selenium mechanize webdriver_manager aiohttp flask')
-    from pystyle import Add,Center,Anime,Colors,Colorate,Write,System
+    from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 
-banners = f"""⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣶⡋⠉⠙⠒⢤⡀⠀⠀⠀⠀⠀⢠⠖⠉⠉⠙⠢⡄⠀
-⠀⠀⠀⠀⠀⠀⢀⣼⣟⡒⠒⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠹⡄
-⠀⠀⠀⠀⠀⠀⣼⠷⠖⠀⠀⠀⠀⠀⠀⠀⠀⠘⡆⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⢷
-⠀⠀⠀⠀⠀⠀⣷⡒⠀⠀⢐⣒⣒⡒⠀⣐⣒⣒⣧⠀⠀⡇⠀⢠⢤⢠⡠⠀⠀⢸
-⠀⠀⠀⠀⠀⢰⣛⣟⣂⠀⠘⠤⠬⠃⠰⠑⠥⠊⣿⠀⢴⠃⠀⠘⠚⠘⠑⠐⠀⢸
-⠀⠀⠀⠀⠀⢸⣿⡿⠤⠀⠀⠀⠀⠀⢀⡆⠀⠀⣿⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⣸
-⠀⠀⠀⠀⠀⠈⠿⣯⡭⠀⠀⠀⠀⢀⣀⠀⠀⠀⡟⠀⠀⢸⠀⠀⠀⠀⠀⠀⢠⠏
-⠀⠀⠀⠀⠀⠀⠀⠈⢯⡥⠄⠀⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠳⢄⣀⣀⣀⡴⠃⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⡦⣄⣀⣀⣀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⠛⠃⠀⠀⠀⢹⠳⡶⣤⡤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣠⢴⣿⣿⣿⡟⡷⢄⣀⣀⣀⡼⠳⡹⣿⣷⠞⣳⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢰⡯⠭⠹⡟⠿⠧⠷⣄⣀⣟⠛⣦⠔⠋⠛⠛⠋⠙⡆⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢸⣿⠭⠉⠀⢠⣤⠀⠀⠀⠘⡷⣵⢻⠀⠀⠀⠀⣼⠀⣇⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⡇⣿⠍⠁⠀⢸⣗⠂⠀⠀⠀⣧⣿⣼⠀⠀⠀⠀⣯⠀⢸⠀
------------------------------------------------------------------
-       Tool Gộp Mess V1.0 By Mdung & CteVcl
-=====================================================================
-➩ Telegram: https;//t.me/ctevclwar
-➩ FaceBook 1: https://www.facebook.com/daikafi5
-➩ FaceBook 2: https://www.facebook.com/profile.php?id=61570431072611
-=====================================================================
-"""
+try:
+    import pyfiglet
+    from termcolor import colored
+except:
+    os.system('pip install pyfiglet termcolor')
+    import pyfiglet
+    from termcolor import colored
 
 def clear():
     if platform.system().lower() == 'linux':
@@ -47,24 +30,25 @@ def clear():
         os.system('cls')
 
 def banner():
-    print('\x1b[0m',end='')
     clear()
-    a=Colorate.Horizontal(Colors.red_to_purple, banners)
-    for i in range(len(a)):
-        sys.stdout.write(a[i])
-        sys.stdout.flush()
-    print()
-
-banner()
+    ascii_banner = pyfiglet.figlet_format("   Mdung", font="slant")
+    print(colored(ascii_banner, 'cyan', attrs=['bold']))
+    print("=" * 60)
+    print(colored("       Tool Nuôi Facebook Treo Card Đa Cookie By Mdung 🧸", 'white', attrs=['bold']))
+    print("=" * 60)
+    print(colored("➩ Telegram: https://t.me/ctevclwar", 'green'))
+    print(colored("➩ FaceBook 1: https://www.facebook.com/daikafi5", 'green'))
+    print(colored("➩ FaceBook 2: https://www.facebook.com/profile.php?id=61570431072611", 'green'))
+    print("=" * 60)
 
 def doi_giay(value):
-    print(f'Doi {value} giay...')
+    print(f'Đợi {value} giây...')
     time.sleep(value)
 
 def kiem_tra_cookie(cookie):
     try:
         if 'c_user=' not in cookie:
-            return {"status": "failed", "msg": "Cookie khong chua user_id"}
+            return {"status": "failed", "msg": "Cookie không chứa user_id"}
         
         user_id = cookie.split('c_user=')[1].split(';')[0]
         url = f"https://graph2.facebook.com/v3.3/{user_id}/picture?redirect=0"
@@ -72,7 +56,7 @@ def kiem_tra_cookie(cookie):
         check_data = response.json()
 
         if not check_data.get('data', {}).get('height') or not check_data.get('data', {}).get('width'):
-            return {"status": "failed", "msg": "Cookie khong hop le"}
+            return {"status": "failed", "msg": "Cookie không hợp lệ"}
 
         headers = {
             'authority': 'm.facebook.com',
@@ -102,7 +86,7 @@ def kiem_tra_cookie(cookie):
             "msg": "successful"
         }
     except Exception as e:
-        return {"status": "failed", "msg": f"Loi xay ra: {str(e)}"}
+        return {"status": "failed", "msg": f"Lỗi xảy ra: {str(e)}"}
 
 def generate_vietnamese_names():
     ho = [
@@ -115,43 +99,7 @@ def generate_vietnamese_names():
         'Thạch', 'Đường', 'Đoạn', 'Lã', 'Thẩm', 'Liễu', 'Bạch', 'Sơn', 'Tào', 'Âu',
         'Lỗ', 'Tư', 'Lạc', 'Hạ', 'Khoa', 'Nông', 'Phí', 'Mạch', 'Khâu', 'Chử',
         'Tiền', 'Đới', 'Tiêu', 'Cát', 'Viên', 'Đồng', 'Trà', 'Hữu', 'Khúc', 'Tề',
-        'Phương', 'Bì', 'Hầu', 'Sầm', 'Nguyến', 'Trấn', 'Lề', 'Phậm', 'Hoẳng', 'Vụ',
-        'Đằng', 'Ngỗ', 'Dưởng', 'Lỷ', 'Vổ', 'Đình', 'Tổ', 'Lầm', 'Phấn', 'Trưởng',
-        'Huýnh', 'Cảo', 'Đoản', 'Lứu', 'Mại', 'Tẳng', 'Hả', 'Trình', 'Đảo', 'Bảnh',
-        'Lục', 'Lả', 'Quạch', 'Tả', 'Thải', 'Đảm', 'Bể', 'Chấu', 'Hử', 'Kiểu',
-        'Nình', 'Vưỡng', 'Triểu', 'Hản', 'Tốn', 'Lường', 'Khưỡng', 'Tẫn', 'Hĩnh', 'Tử',
-        'Vắn', 'Phứng', 'Hổng', 'Nghiếm', 'Tống', 'Hững', 'Lại', 'Cứng', 'Bạc', 'Điển',
-        'Chưỡng', 'Thạch', 'Đường', 'Đoạn', 'Lã', 'Thẩm', 'Liễu', 'Bạch', 'Sơn', 'Tảo',
-        'Âu', 'Lỗ', 'Tứ', 'Lạc', 'Hạ', 'Khoa', 'Nông', 'Phí', 'Mạch', 'Khâu',
-        'Chử', 'Tiền', 'Đới', 'Tiêu', 'Cát', 'Viên', 'Đồng', 'Trà', 'Hữu', 'Khúc',
-        'Tề', 'Phương', 'Bì', 'Hầu', 'Sầm', 'Nguyến', 'Trấn', 'Lề', 'Phậm', 'Hoẳng',
-        'Vụ', 'Đằng', 'Ngỗ', 'Dưởng', 'Lỷ', 'Vổ', 'Đình', 'Tổ', 'Lầm', 'Phấn',
-        'Trưởng', 'Huýnh', 'Cảo', 'Đoản', 'Lứu', 'Mại', 'Tẳng', 'Hả', 'Trình', 'Đảo',
-        'Bảnh', 'Lục', 'Lả', 'Quạch', 'Tả', 'Thải', 'Đảm', 'Bể', 'Chấu', 'Hử',
-        'Kiểu', 'Nình', 'Vưỡng', 'Triểu', 'Hản', 'Tốn', 'Lường', 'Khưỡng', 'Tẫn', 'Hĩnh',
-        'Tử', 'Vắn', 'Phứng', 'Hổng', 'Nghiếm', 'Tống', 'Hững', 'Lại', 'Cứng', 'Bạc',
-        'Điển', 'Chưỡng', 'Thạch', 'Đường', 'Đoạn', 'Lã', 'Thẩm', 'Liễu', 'Bạch', 'Sơn',
-        'Tảo', 'Âu', 'Lỗ', 'Tứ', 'Lạc', 'Hạ', 'Khoa', 'Nông', 'Phí', 'Mạch',
-        'Khâu', 'Chử', 'Tiền', 'Đới', 'Tiêu', 'Cát', 'Viên', 'Đồng', 'Trà', 'Hữu',
-        'Khúc', 'Tề', 'Phương', 'Bì', 'Hầu', 'Sầm', 'Nguyến', 'Trấn', 'Lề', 'Phậm',
-        'Hoẳng', 'Vụ', 'Đằng', 'Ngỗ', 'Dưởng', 'Lỷ', 'Vổ', 'Đình', 'Tổ', 'Lầm',
-        'Phấn', 'Trưởng', 'Huýnh', 'Cảo', 'Đoản', 'Lứu', 'Mại', 'Tẳng', 'Hả', 'Trình',
-        'Đảo', 'Bảnh', 'Lục', 'Lả', 'Quạch', 'Tả', 'Thải', 'Đảm', 'Bể', 'Chấu',
-        'Hử', 'Kiểu', 'Nình', 'Vưỡng', 'Triểu', 'Hản', 'Tốn', 'Lường', 'Khưỡng', 'Tẫn',
-        'Hĩnh', 'Tử', 'Vắn', 'Phứng', 'Hổng', 'Nghiếm', 'Tống', 'Hững', 'Lại', 'Cứng',
-        'Bạc', 'Điển', 'Chưỡng', 'Thạch', 'Đường', 'Đoạn', 'Lã', 'Thẩm', 'Liễu', 'Bạch',
-        'Sơn', 'Tảo', 'Âu', 'Lỗ', 'Tứ', 'Lạc', 'Hạ', 'Khoa', 'Nông', 'Phí',
-        'Mạch', 'Khâu', 'Chử', 'Tiền', 'Đới', 'Tiêu', 'Cát', 'Viên', 'Đồng', 'Trà',
-        'Hữu', 'Khúc', 'Tề', 'Phương', 'Bì', 'Hầu', 'Sầm', 'Nguyến', 'Trấn', 'Lề',
-        'Phậm', 'Hoẳng', 'Vụ', 'Đằng', 'Ngỗ', 'Dưởng', 'Lỷ', 'Vổ', 'Đình', 'Tổ',
-        'Lầm', 'Phấn', 'Trưởng', 'Huýnh', 'Cảo', 'Đoản', 'Lứu', 'Mại', 'Tẳng', 'Hả',
-        'Trình', 'Đảo', 'Bảnh', 'Lục', 'Lả', 'Quạch', 'Tả', 'Thải', 'Đảm', 'Bể',
-        'Chấu', 'Hử', 'Kiểu', 'Nình', 'Vưỡng', 'Triểu', 'Hản', 'Tốn', 'Lường', 'Khưỡng',
-        'Tẫn', 'Hĩnh', 'Tử', 'Vắn', 'Phứng', 'Hổng', 'Nghiếm', 'Tống', 'Hững', 'Lại',
-        'Cứng', 'Bạc', 'Điển', 'Chưỡng', 'Thạch', 'Đường', 'Đoạn', 'Lã', 'Thẩm', 'Liễu',
-        'Bạch', 'Sơn', 'Tảo', 'Âu', 'Lỗ', 'Tứ', 'Lạc', 'Hạ', 'Khoa', 'Nông',
-        'Phí', 'Mạch', 'Khâu', 'Chử', 'Tiền', 'Đới', 'Tiêu', 'Cát', 'Viên', 'Đồng',
-        'Trà', 'Hữu', 'Khúc', 'Tề', 'Phương', 'Bì', 'Hầu', 'Sầm'
+        'Phương', 'Bì', 'Hầu', 'Sầm'
     ]
     ten_dem = [
         'Văn', 'Thị', 'Ngọc', 'Minh', 'Hồng', 'Anh', 'Hải', 'Bích', 'Đức', 'Lan',
@@ -164,38 +112,7 @@ def generate_vietnamese_names():
         'Hoài', 'Hợp', 'Kim', 'Liên', 'Liễu', 'Loan', 'Mẫn', 'Ngân', 'Nhiên', 'Oanh',
         'Phượng', 'Thắm', 'Thiên', 'Thục', 'Thu', 'Tuyết', 'Uyên', 'Vân', 'Vy', 'Yên',
         'Đào', 'Đoan', 'Hậu', 'Lệ', 'Mỹ', 'Nhàn', 'Quyên', 'Sương', 'Thoa', 'Thúy',
-        'Tiên', 'Trang', 'Trinh', 'Tú', 'Vắn', 'Thĩ', 'Ngọc', 'Mình', 'Hổng', 'Ánh',
-        'Hải', 'Bịch', 'Đức', 'Làn', 'Phóng', 'Mãi', 'Hương', 'Tuấn', 'Quỷnh', 'Hoà',
-        'Lình', 'Khoá', 'Như', 'Phức', 'Thảnh', 'Tẩm', 'Dũy', 'Hạnh', 'Hằng', 'Khánh',
-        'Bảo', 'Trúng', 'Ngã', 'Nhật', 'Thủy', 'Yến', 'Xuẫn', 'Sơn', 'Túng', 'Phương',
-        'Diệu', 'Kiền', 'Trí', 'Vĩnh', 'Huyền', 'Thảo', 'Đạt', 'Cường', 'Hoà', 'Khởi',
-        'Long', 'Nam', 'Quần', 'Việt', 'Bình', 'Chấu', 'Đông', 'Hiệu', 'Hiệp', 'Hũy',
-        'Khải', 'Nhĩ', 'Quý', 'Thắng', 'Ái', 'Ân', 'Băng', 'Cẩm', 'Cúc', 'Dũng', 'Đan',
-        'Điệp', 'Giang', 'Hiền', 'Hoài', 'Hợp', 'Kim', 'Liên', 'Liễu', 'Loan', 'Mẫn',
-        'Ngân', 'Nhiên', 'Oanh', 'Phượng', 'Thắm', 'Thiên', 'Thục', 'Thu', 'Tuyết', 'Uyên',
-        'Vân', 'Vỹ', 'Yên', 'Đào', 'Đoan', 'Hậu', 'Lệ', 'Mỹ', 'Nhàn', 'Quyên', 'Sương',
-        'Thoa', 'Thúy', 'Tiên', 'Trang', 'Trình', 'Tú', 'Văn', 'Thị', 'Ngọc', 'Minh',
-        'Hồng', 'Anh', 'Hải', 'Bích', 'Đức', 'Lan', 'Phong', 'Mai', 'Hương', 'Tuấn',
-        'Quỳnh', 'Hoa', 'Linh', 'Khoa', 'Như', 'Phúc', 'Thanh', 'Tâm', 'Duy', 'Hạnh',
-        'Hằng', 'Khánh', 'Bảo', 'Trung', 'Nga', 'Nhật', 'Thủy', 'Yến', 'Xuân', 'Sơn',
-        'Tùng', 'Phương', 'Diệu', 'Kiên', 'Trí', 'Vĩnh', 'Huyền', 'Thảo', 'Đạt', 'Cường',
-        'Hòa', 'Khởi', 'Long', 'Nam', 'Quân', 'Việt', 'Bình', 'Châu', 'Đông', 'Hiếu',
-        'Hiệp', 'Huy', 'Khai', 'Nhi', 'Quý', 'Thắng', 'Ái', 'Ân', 'Băng', 'Cẩm', 'Cúc',
-        'Dung', 'Đan', 'Điệp', 'Giang', 'Hiền', 'Hoài', 'Hợp', 'Kim', 'Liên', 'Liễu',
-        'Loan', 'Mẫn', 'Ngân', 'Nhiên', 'Oanh', 'Phượng', 'Thắm', 'Thiên', 'Thục', 'Thu',
-        'Tuyết', 'Uyên', 'Vân', 'Vy', 'Yên', 'Đào', 'Đoan', 'Hậu', 'Lệ', 'Mỹ', 'Nhàn',
-        'Quyên', 'Sương', 'Thoa', 'Thúy', 'Tiên', 'Trang', 'Trinh', 'Tú', 'Vắn', 'Thĩ',
-        'Ngọc', 'Mình', 'Hổng', 'Ánh', 'Hải', 'Bịch', 'Đức', 'Làn', 'Phóng', 'Mãi',
-        'Hương', 'Tuấn', 'Quỷnh', 'Hoà', 'Lình', 'Khoá', 'Như', 'Phức', 'Thảnh', 'Tẩm',
-        'Dũy', 'Hạnh', 'Hằng', 'Khánh', 'Bảo', 'Trúng', 'Ngã', 'Nhật', 'Thủy', 'Yến',
-        'Xuẫn', 'Sơn', 'Túng', 'Phương', 'Diệu', 'Kiền', 'Trí', 'Vĩnh', 'Huyền', 'Thảo',
-        'Đạt', 'Cường', 'Hoà', 'Khởi', 'Long', 'Nam', 'Quần', 'Việt', 'Bình', 'Chấu',
-        'Đông', 'Hiệu', 'Hiệp', 'Hũy', 'Khải', 'Nhĩ', 'Quý', 'Thắng', 'Ái', 'Ân',
-        'Băng', 'Cẩm', 'Cúc', 'Dũng', 'Đan', 'Điệp', 'Giang', 'Hiền', 'Hoài', 'Hợp',
-        'Kim', 'Liên', 'Liễu', 'Loan', 'Mẫn', 'Ngân', 'Nhiên', 'Oanh', 'Phượng', 'Thắm',
-        'Thiên', 'Thục', 'Thu', 'Tuyết', 'Uyên', 'Vân', 'Vỹ', 'Yên', 'Đào', 'Đoan',
-        'Hậu', 'Lệ', 'Mỹ', 'Nhàn', 'Quyên', 'Sương', 'Thoa', 'Thúy', 'Tiên', 'Trang',
-        'Trình', 'Tú'
+        'Tiên', 'Trang', 'Trinh', 'Tú'
     ]
     ten = [
         'An', 'Bình', 'Cường', 'Duy', 'Hà', 'Hùng', 'Hương', 'Khang', 'Lan', 'Linh',
@@ -209,37 +126,7 @@ def generate_vietnamese_names():
         'Đoan', 'Hậu', 'Lệ', 'Mỹ', 'Nhàn', 'Quyên', 'Sương', 'Thoa', 'Thúy', 'Tiên',
         'Trinh', 'Tú', 'Ái', 'Bích', 'Đức', 'Khánh', 'Nga', 'Nhật', 'Thủy', 'Vĩnh',
         'Huyền', 'Cường', 'Hòa', 'Khởi', 'Quân', 'Việt', 'Bình', 'Châu', 'Đông', 'Hiếu',
-        'Hiệp', 'Huy', 'Khai', 'Nhi', 'Quý', 'Thắng', 'Ánh', 'Bình', 'Cường', 'Dũy',
-        'Hà', 'Húng', 'Hương', 'Kháng', 'Làn', 'Lình', 'Mại', 'Mình', 'Nám', 'Ngọc',
-        'Phức', 'Phóng', 'Quần', 'Quỷnh', 'Sơn', 'Thảo', 'Tẩm', 'Thảnh', 'Thình', 'Tráng',
-        'Trí', 'Tuấn', 'Túng', 'Vẫn', 'Việt', 'Vỹ', 'Xuẫn', 'Yến', 'Bảo', 'Chấu',
-        'Đạt', 'Đông', 'Hải', 'Hoà', 'Khoa', 'Hẫn', 'Hiệu', 'Hiệp', 'Hũy', 'Khải',
-        'Long', 'Nhĩ', 'Phương', 'Quý', 'Thắng', 'Ánh', 'Ân', 'Băng', 'Cẩm', 'Cúc',
-        'Dũng', 'Đan', 'Điệp', 'Giang', 'Hiền', 'Hoài', 'Hòa', 'Hợp', 'Kim', 'Liên',
-        'Liễu', 'Loan', 'Mẫn', 'Ngân', 'Nhiên', 'Oanh', 'Phượng', 'Thắm', 'Thiên', 'Thục',
-        'Thu', 'Tuyết', 'Uyên', 'Vân', 'Yên', 'Đào', 'Đoan', 'Hậu', 'Lệ', 'Mỹ',
-        'Nhàn', 'Quyên', 'Sương', 'Thoa', 'Thúy', 'Tiên', 'Trình', 'Tú', 'An', 'Bình',
-        'Cường', 'Duy', 'Hà', 'Hùng', 'Hương', 'Khang', 'Lan', 'Linh', 'Mai', 'Minh',
-        'Nam', 'Ngọc', 'Phúc', 'Phong', 'Quân', 'Quỳnh', 'Sơn', 'Thảo', 'Tâm', 'Thanh',
-        'Thịnh', 'Trang', 'Trí', 'Tuấn', 'Tùng', 'Vân', 'Việt', 'Vỹ', 'Xuân', 'Yến',
-        'Bảo', 'Châu', 'Đạt', 'Đông', 'Hải', 'Hoa', 'Khoa', 'Hân', 'Hiếu', 'Hiệp',
-        'Huy', 'Khai', 'Long', 'Nhi', 'Phương', 'Quý', 'Thắng', 'Anh', 'Ân', 'Băng',
-        'Cẩm', 'Cúc', 'Dung', 'Đan', 'Điệp', 'Giang', 'Hiền', 'Hoài', 'Hòa', 'Hợp',
-        'Kim', 'Liên', 'Liễu', 'Loan', 'Mẫn', 'Ngân', 'Nhiên', 'Oanh', 'Phượng', 'Thắm',
-        'Thiên', 'Thục', 'Thu', 'Tuyết', 'Uyên', 'Vân', 'Yên', 'Đào', 'Đoan', 'Hậu',
-        'Lệ', 'Mỹ', 'Nhàn', 'Quyên', 'Sương', 'Thoa', 'Thúy', 'Tiên', 'Trinh', 'Tú',
-        'Ái', 'Bích', 'Đức', 'Khánh', 'Nga', 'Nhật', 'Thủy', 'Vĩnh', 'Huyền', 'Cường',
-        'Hòa', 'Khởi', 'Quân', 'Việt', 'Bình', 'Châu', 'Đông', 'Hiếu', 'Hiệp', 'Huy',
-        'Khai', 'Nhi', 'Quý', 'Thắng', 'Ánh', 'Bình', 'Cường', 'Dũy', 'Hà', 'Húng',
-        'Hương', 'Kháng', 'Làn', 'Lình', 'Mại', 'Mình', 'Nám', 'Ngọc', 'Phức', 'Phóng',
-        'Quần', 'Quỷnh', 'Sơn', 'Thảo', 'Tẩm', 'Thảnh', 'Thình', 'Tráng', 'Trí', 'Tuấn',
-        'Túng', 'Vẫn', 'Việt', 'Vỹ', 'Xuẫn', 'Yến', 'Bảo', 'Chấu', 'Đạt', 'Đông',
-        'Hải', 'Hoà', 'Khoa', 'Hẫn', 'Hiệu', 'Hiệp', 'Hũy', 'Khải', 'Long', 'Nhĩ',
-        'Phương', 'Quý', 'Thắng', 'Ánh', 'Ân', 'Băng', 'Cẩm', 'Cúc', 'Dũng', 'Đan',
-        'Điệp', 'Giang', 'Hiền', 'Hoài', 'Hòa', 'Hợp', 'Kim', 'Liên', 'Liễu', 'Loan',
-        'Mẫn', 'Ngân', 'Nhiên', 'Oanh', 'Phượng', 'Thắm', 'Thiên', 'Thục', 'Thu', 'Tuyết',
-        'Uyên', 'Vân', 'Yên', 'Đào', 'Đoan', 'Hậu', 'Lệ', 'Mỹ', 'Nhàn', 'Quyên', 'Sương',
-        'Thoa', 'Thúy', 'Tiên', 'Trình', 'Tú'
+        'Hiệp', 'Huy', 'Khai', 'Nhi', 'Quý', 'Thắng'
     ]
     vietnamese_names = []
     for i in range(5000):
@@ -497,206 +384,117 @@ class Facebook:
         except:
             return {'status': 'error', 'trangthai': 'thatbai'}
 
-def doc_cookie_tu_file(file_path):
-    cookies = []
-    try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            for line in file:
-                cookie = line.strip()
-                if cookie:
-                    cookies.append(cookie)
-        return cookies
-    except FileNotFoundError:
-        print(f"Khong tim thay file {file_path}!")
-        return []
-    except Exception as e:
-        print(f"Loi khi doc file cookie: {str(e)}")
-        return []
+def nhap_danh_sach_cookie():
+    banner()
+    cookie_list = []
+    stt = 1
+    while True:
+        ck = input(colored(f"Nhập cookie thứ {stt} (Ấn 'enter' để dừng nhập): ", 'yellow', attrs=['bold'])).strip()
+        if ck.lower() in ['', 'enter']:
+            print('Đã lưu cookie')
+            if not cookie_list:
+                print('Không có cookie nào được lưu')
+            else:
+                for i, c in enumerate(cookie_list, 1):
+                    print(f'  {i}. {c[:50]}...')
+            break
+        if 'c_user=' in ck:
+            cookie_list.append(ck)
+            stt += 1
+    return cookie_list
 
 def main():
     banner()
     
-    file_cookie = input('Nhap ten file chua cookie (1 dong 1 cookie): ')
-    cookies = doc_cookie_tu_file(file_cookie)
+    # Nhập cookie thủ công
+    print(colored("=== NHẬP COOKIE ===", 'cyan', attrs=['bold']))
+    print()
+    
+    cookies = nhap_danh_sach_cookie()
     if not cookies:
-        print('Khong co cookie nao hop le, thoat chuong trinh!')
+        print(colored('Không có cookie nào được nhập!', 'red'))
         return
     
-
+    # Kiểm tra cookie
     cookies_hop_le = []
     thong_tin_tai_khoan = []
-    for cookie in cookies:
+    print(colored("\nKIỂM TRA COOKIE", 'yellow', attrs=['bold']))
+    for i, cookie in enumerate(cookies, 1):
         check = kiem_tra_cookie(cookie)
         if check['status'] == 'success':
-            print(f"Da dang nhap vao tai khoan Facebook: {check['name']} (ID: {check['user_id']}) - Live")
+            print(colored(f"   [{i}] ✅ Live - {check['name']} (ID: {check['user_id']})", 'green'))
             cookies_hop_le.append(cookie)
             thong_tin_tai_khoan.append({'name': check['name'], 'id': check['user_id']})
         else:
-            print(f"Cookie khong hop le: {check['msg']} - Die")
+            print(colored(f"   [{i}] ❌ Die - {check['msg']}", 'red'))
     
     if not cookies_hop_le:
-        print('Khong co cookie nao live, thoat chuong trinh!')
+        print(colored('Không có cookie nào live, thoát chương trình!', 'red'))
+        return
+
+    cookies_hop_le = []
+    thong_tin_tai_khoan = []
+    print(colored("\n2. KIỂM TRA COOKIE", 'yellow', attrs=['bold']))
+    for i, cookie in enumerate(cookies, 1):
+        check = kiem_tra_cookie(cookie)
+        if check['status'] == 'success':
+            print(colored(f"   [{i}] ✅ Live - {check['name']} (ID: {check['user_id']})", 'green'))
+            cookies_hop_le.append(cookie)
+            thong_tin_tai_khoan.append({'name': check['name'], 'id': check['user_id']})
+        else:
+            print(colored(f"   [{i}] ❌ Die - {check['msg']}", 'red'))
+    
+    if not cookies_hop_le:
+        print(colored('Không có cookie nào live, thoát chương trình!', 'red'))
         return
     
-
-    thanh_ngang(65)
-    print('=== CAU HINH TOOL ===')
+    # Nhập cấu hình
+    print(colored("\n3. THỰC HÀNH", 'yellow', attrs=['bold']))
     
     while True:
         try:
-            delay = int(input('Nhap delay chung (giay): '))
+            delay = int(input(colored('   Nhập delay chung (giây): ', 'white')))
             if delay > 0:
                 break
             else:
-                print('Vui long nhap so lon hon 0')
+                print(colored('   Vui lòng nhập số lớn hơn 0', 'red'))
         except:
-            print('Vui long nhap so')
+            print(colored('   Vui lòng nhập số', 'red'))
     
     while True:
         try:
-            so_nhiem_vu = int(input('Nhap so nhiem vu muon thuc hien: '))
+            so_nhiem_vu = int(input(colored('   Nhập số nhiệm vụ muốn thực hiện: ', 'white')))
             if so_nhiem_vu > 0:
                 break
             else:
-                print('Vui long nhap so lon hon 0')
+                print(colored('   Vui lòng nhập số lớn hơn 0', 'red'))
         except:
-            print('Vui long nhap so')
+            print(colored('   Vui lòng nhập số', 'red'))
     
-
+    # Nhập danh sách bình luận
     danh_sach_binh_luan = []
+    print(colored("\n4. NHẬP NỘI DUNG BÌNH LUẬN", 'yellow', attrs=['bold']))
     i = 1
     while True:
-        cmt = input(f'Nhap noi dung binh luan so {i} (nhap trong de ket thuc): ').strip()
+        cmt = input(colored(f'   Nhập nội dung bình luận số {i} (nhập trống để kết thúc): ', 'white')).strip()
         if cmt == '':
             break
         danh_sach_binh_luan.append(cmt)
         i += 1
     
     if not danh_sach_binh_luan:
-        print('Chua nhap binh luan nao, thoat chuong trinh!')
-        return
+        danh_sach_binh_luan = ['👍', '🤗', '❤️', '😊', '🥰']
+        print(colored('   Sử dụng bình luận mặc định!', 'yellow'))
     
-
+    # Từ khóa nhóm (rút gọn)
     tu_khoa_nhom = [
         'công nghệ', 'kinh doanh', 'giáo dục', 'y tế', 'thể thao', 'giải trí',
         'du lịch', 'ẩm thực', 'thời trang', 'xe cộ', 'bất động sản', 'tài chính',
         'marketing', 'thiết kế', 'lập trình', 'nhiếp ảnh', 'âm nhạc', 'phim ảnh',
-        'sách vở', 'học tập', 'làm đẹp', 'sức khỏe', 'gia đình', 'tình yêu',
-        'bạn bè', 'công việc', 'học hành', 'điện tử', 'máy tính', 'điện thoại',
-        'công nghệ thông tin', 'trí tuệ nhân tạo', 'blockchain', 'khoa học', 'mạng xã hội',
-        'đầu tư', 'khởi nghiệp', 'doanh nghiệp', 'thương mại điện tử', 'quản lý',
-        'kế toán', 'ngân hàng', 'bảo hiểm', 'chứng khoán', 'tài sản', 'tiết kiệm',
-        'y học', 'sức khỏe tâm lý', 'dinh dưỡng', 'tập gym', 'yoga', 'chạy bộ',
-        'bóng đá', 'bóng rổ', 'cầu lông', 'bơi lội', 'võ thuật', 'esports',
-        'game online', 'trò chơi', 'phim hoạt hình', 'phim truyền hình', 'ca nhạc',
-        'nhạc trẻ', 'nhạc pop', 'nhạc rap', 'nhạc rock', 'nhạc cổ điển', 'nhạc dân ca',
-        'văn học', 'thơ ca', 'tiểu thuyết', 'truyện ngắn', 'truyện tranh', 'manga',
-        'đọc sách', 'học ngoại ngữ', 'học tiếng Anh', 'học tiếng Nhật', 'học tiếng Hàn',
-        'kỹ năng mềm', 'phát triển bản thân', 'motivation', 'lãnh đạo', 'giao tiếp',
-        'nấu ăn', 'bánh ngọt', 'đồ uống', 'ẩm thực Việt', 'ẩm thực Á', 'ẩm thực Âu',
-        'thời trang nam', 'thời trang nữ', 'phụ kiện', 'giày dép', 'túi xách',
-        'xe máy', 'xe hơi', 'xe đạp', 'ô tô', 'mô tô', 'xe điện', 'bất động sản Hà Nội',
-        'bất động sản Sài Gòn', 'nhà đất', 'căn hộ', 'chung cư', 'biệt thự',
-        'nội thất', 'kiến trúc', 'xây dựng', 'trang trí', 'phong thủy', 'du lịch biển',
-        'du lịch núi', 'du lịch nước ngoài', 'phượt', 'cắm trại', 'khám phá',
-        'chăm sóc da', 'trang điểm', 'mỹ phẩm', 'làm tóc', 'chăm sóc cơ thể',
-        'sức khỏe phụ nữ', 'sức khỏe nam giới', 'yoga thiền', 'giảm cân', 'tăng cân',
-        'nuôi dạy con', 'hôn nhân', 'gia đình hạnh phúc', 'tình bạn', 'tình yêu đôi lứa',
-        'hẹn hò', 'công nghệ 4.0', 'robotics', 'iot', 'dữ liệu lớn', 'big data',
-        'máy học', 'học máy', 'phân tích dữ liệu', 'khoa học máy tính', 'an ninh mạng',
-        'lập trình web', 'lập trình app', 'thiết kế đồ họa', 'thiết kế 3D', 'chỉnh sửa ảnh',
-        'video editing', 'quay phim', 'dựng phim', 'vẽ tranh', 'hội họa', 'nghệ thuật',
-        'thủ công', 'điêu khắc', 'gốm sứ', 'thêu thùa', 'may vá', 'nhạc cụ',
-        'guitar', 'piano', 'trống', 'sáo', 'violon', 'kpop', 'jpop', 'âm nhạc truyền thống',
-        'phim Việt', 'phim Hollywood', 'phim Hàn Quốc', 'phim Nhật Bản', 'phim kinh dị',
-        'phim hài', 'phim tình cảm', 'phim hành động', 'phim khoa học viễn tưởng',
-        'truyện cổ tích', 'truyện kinh dị', 'truyện khoa học', 'văn hóa', 'lịch sử',
-        'địa lý', 'toán học', 'vật lý', 'hóa học', 'sinh học', 'ngôn ngữ học',
-        'tiếng Trung', 'tiếng Pháp', 'tiếng Đức', 'tiếng Tây Ban Nha', 'kỹ năng sống',
-        'quản lý thời gian', 'tư duy sáng tạo', 'giải quyết vấn đề', 'tâm lý học',
-        'tâm lý tình yêu', 'tâm lý gia đình', 'tâm lý trẻ em', 'nấu ăn chay',
-        'ẩm thực đường phố', 'món ngon mỗi ngày', 'công thức nấu ăn', 'bánh mì',
-        'phở', 'bún bò', 'bánh xèo', 'thời trang vintage', 'thời trang công sở',
-        'thời trang dạo phố', 'thời trang thể thao', 'xe hơi cũ', 'xe hơi mới',
-        'sửa xe', 'độ xe', 'đua xe', 'bất động sản Đà Nẵng', 'bất động sản Cần Thơ',
-        'nhà phố', 'đất nền', 'cho thuê nhà', 'mua bán nhà đất', 'nội thất gỗ',
-        'nội thất hiện đại', 'du lịch Đà Lạt', 'du lịch Phú Quốc', 'du lịch Sapa',
-        'du lịch Huế', 'du lịch Hội An', 'chăm sóc tóc', 'làm nail', 'spa',
-        'massage', 'chăm sóc sức khỏe', 'tập thể dục', 'thiền', 'chạy marathon',
-        'bóng chuyền', 'tennis', 'bóng bàn', 'cờ vua', 'cờ tướng', 'game mobile',
-        'game pc', 'phim siêu anh hùng', 'phim cổ trang', 'phim tâm lý', 'nhạc EDM',
-        'nhạc ballad', 'nhạc jazz', 'nhạc acoustic', 'sách self-help', 'sách kinh doanh',
-        'sách kỹ năng', 'sách lịch sử', 'sách khoa học', 'học online', 'học lập trình',
-        'học thiết kế', 'học marketing', 'học tài chính', 'học đầu tư', 'chứng khoán Việt',
-        'tiền điện tử', 'bitcoin', 'forex', 'tài chính cá nhân', 'quản lý chi tiêu',
-        'sức khỏe tâm thần', 'y học cổ truyền', 'thuốc nam', 'châm cứu', 'bấm huyệt',
-        'yoga trị liệu', 'thể dục thẩm mỹ', 'nuôi dạy trẻ', 'giáo dục sớm',
-        'tình cảm gia đình', 'kỹ năng nuôi con', 'tình yêu tuổi trẻ', 'hôn nhân hạnh phúc',
-        'giao tiếp xã hội', 'kỹ năng thuyết trình', 'công nghệ xanh', 'năng lượng tái tạo',
-        'môi trường', 'bảo vệ môi trường', 'nông nghiệp', 'nông nghiệp sạch',
-        'trồng cây', 'làm vườn', 'chăm sóc thú cưng', 'chó mèo', 'thú cưng',
-        'cá cảnh', 'chim cảnh', 'nghệ thuật đường phố', 'graffiti', 'nhảy hiện đại',
-        'vũ đạo', 'khiêu vũ', 'hiphop', 'nhạc cụ dân tộc', 'đàn bầu', 'đàn tranh',
-        'sáo trúc', 'phim tài liệu', 'phim chiến tranh', 'phim gia đình', 'sách thiếu nhi',
-        'sách giáo khoa', 'học nhóm', 'học bổng', 'du học', 'học tiếng Thái',
-        'học tiếng Nga', 'kỹ năng lãnh đạo', 'quản trị doanh nghiệp', 'startup',
-        'doanh nhân', 'thương hiệu', 'quảng cáo', 'SEO', 'content marketing',
-        'digital marketing', 'bán hàng online', 'mạng lưới kinh doanh', 'thương mại',
-        'xuất khẩu', 'nhập khẩu', 'logistics', 'vận chuyển', 'kiến trúc hiện đại',
-        'kiến trúc cổ', 'nội thất tối giản', 'phong thủy nhà ở', 'du lịch sinh thái',
-        'du lịch văn hóa', 'du lịch tâm linh', 'chăm sóc sắc đẹp', 'mỹ phẩm thiên nhiên',
-        'chăm sóc da mặt', 'trị mụn', 'chống lão hóa', 'tập luyện thể thao',
-        'dinh dưỡng thể thao', 'chạy bộ đường dài', 'bóng đá futsal', 'game chiến thuật',
-        'game nhập vai', 'phim hoạt hình Nhật', 'phim Bollywood', 'nhạc không lời',
-        'sách tâm lý', 'sách triết học', 'sách văn học Việt', 'sách văn học nước ngoài',
-        'học tiếng Ý', 'học tiếng Bồ Đào Nha', 'kỹ năng viết lách', 'viết blog',
-        'viết sách', 'nhà văn', 'nhà thơ', 'ẩm thực chay', 'món ăn truyền thống',
-        'bánh chưng', 'bánh tét', 'thời trang trẻ em', 'thời trang cao cấp',
-        'xe hơi thể thao', 'xe hơi điện', 'bất động sản nghỉ dưỡng', 'nhà đất nông thôn',
-        'nội thất thông minh', 'du lịch bụi', 'du lịch tự túc', 'chăm sóc da dầu',
-        'chăm sóc da khô', 'sức khỏe trẻ em', 'sức khỏe người già', 'yoga cho bà bầu',
-        'nuôi con bằng sữa mẹ', 'tình yêu đồng giới', 'giao tiếp công sở', 'công nghệ AI',
-        'máy bay không người lái', 'drone', 'thực tế ảo', 'AR', 'VR', 'metaverse',
-        'lập trình Python', 'lập trình Java', 'lập trình C++', 'thiết kế UI/UX',
-        'chỉnh sửa video', 'vẽ kỹ thuật số', 'nghệ thuật thư pháp', 'nhạc indie',
-        'phim độc lập', 'sách khoa học viễn tưởng', 'học từ xa', 'học nghề',
-        'học nấu ăn', 'học cắt may', 'học làm bánh', 'tài chính vi mô', 'đầu tư vàng',
-        'đầu tư cổ phiếu', 'sức khỏe sinh sản', 'tập thể hình', 'bóng rổ đường phố',
-        'game sinh tồn', 'phim tâm lý xã hội', 'nhạc rap Việt', 'sách kinh tế',
-        'học lập trình game', 'học marketing online', 'học đầu tư bất động sản',
-        'chăm sóc sức khỏe tại nhà', 'y học hiện đại', 'thiền định', 'chạy bộ cộng đồng',
-        'bóng đá nữ', 'game chiến lược', 'phim tài liệu lịch sử', 'nhạc acoustic Việt',
-        'sách phát triển cá nhân', 'học tiếng Việt', 'kỹ năng đàm phán', 'quản lý dự án',
-        'công nghệ sinh học', 'năng lượng mặt trời', 'nông nghiệp hữu cơ', 'chăm sóc cây cảnh',
-        'nuôi cá cảnh', 'nghệ thuật biểu diễn', 'kịch nghệ', 'múa đương đại', 'phim ngắn',
-        'sách trinh thám', 'học làm giàu', 'học kinh doanh online', 'tài chính doanh nghiệp',
-        'sức khỏe tinh thần', 'tập yoga tại nhà', 'bóng chuyền bãi biển', 'game mô phỏng',
-        'phim viễn tưởng', 'nhạc dân gian', 'sách lịch sử Việt Nam', 'học tiếng Ả Rập',
-        'kỹ năng thuyết phục', 'quản lý nhân sự', 'công nghệ tự động hóa', 'năng lượng gió',
-        'nông nghiệp thông minh', 'chăm sóc hoa lan', 'nuôi chim cảnh', 'nghệ thuật sân khấu',
-        'phim tài liệu khoa học', 'nhạc truyền thống Việt', 'sách văn học cổ điển',
-        'học lập trình mobile', 'học quảng cáo online', 'tài chính quốc tế', 'sức khỏe toàn diện',
-        'tập luyện tại nhà', 'bóng bàn chuyên nghiệp', 'game phiêu lưu', 'phim kinh điển',
-        'nhạc pop Việt', 'sách kỹ năng sống', 'học tiếng Hindi', 'kỹ năng tổ chức',
-        'quản lý thời gian hiệu quả', 'công nghệ nano', 'năng lượng sạch', 'nông nghiệp bền vững',
-        'chăm sóc bonsai', 'nuôi thú cưng độc lạ', 'nghệ thuật truyền thống', 'phim tài liệu xã hội',
-        'nhạc quê hương', 'sách văn học hiện đại', 'học lập trình AI', 'học SEO website',
-        'tài chính cá nhân thông minh', 'sức khỏe lâu dài', 'tập luyện sức bền', 'cờ vua online',
-        'game thế giới mở', 'phim khoa học giả tưởng', 'nhạc trữ tình', 'sách phát triển kỹ năng',
-        'học tiếng Thổ Nhĩ Kỳ', 'kỹ năng làm việc nhóm', 'quản lý rủi ro', 'công nghệ năng lượng',
-        'nông nghiệp đô thị', 'chăm sóc cây ăn quả', 'nuôi bò sát', 'nghệ thuật hiện đại',
-        'phim tài liệu môi trường', 'nhạc dân ca Việt', 'sách kinh doanh quốc tế',
-        'học lập trình blockchain', 'học content marketing', 'tài chính bền vững', 'sức khỏe cộng đồng',
-        'tập luyện chức năng', 'cờ tướng online', 'game chiến đấu', 'phim lịch sử', 'nhạc bolero',
-        'sách kỹ năng lãnh đạo', 'học tiếng Indonesia', 'kỹ năng giải quyết xung đột',
-        'quản lý chuỗi cung ứng', 'công nghệ thông minh', 'nông nghiệp công nghệ cao',
-        'chăm sóc cây kiểng', 'nuôi thú cưng nhỏ', 'nghệ thuật cổ điển', 'phim tài liệu văn hóa',
-        'nhạc cải lương', 'sách khởi nghiệp', 'học lập trình web full stack', 'học quảng cáo Facebook',
-        'tài chính xanh', 'sức khỏe tự nhiên', 'tập luyện ngoài trời', 'cờ vua trẻ em',
-        'game nhập vai online', 'phim tâm lý tình cảm', 'nhạc trẻ Việt', 'sách kỹ năng giao tiếp'
+        'sách vở', 'học tập', 'làm đẹp', 'sức khỏe', 'gia đình', 'tình yêu'
     ]
     
-
+    # Chọn cảm xúc
     ds_cam_xuc = {
         "1": "LIKE",
         "2": "LOVE",
@@ -706,28 +504,30 @@ def main():
         "6": "SAD",
         "7": "ANGRY"
     }
-    print('Chon loai cam xuc:')
-    print('Nhap [1] de chay Like')
-    print('Nhap [2] de chay Love')
-    print('Nhap [3] de chay Care')
-    print('Nhap [4] de chay Haha')
-    print('Nhap [5] de chay Wow')
-    print('Nhap [6] de chay Sad')
-    print('Nhap [7] de chay Angry')
-    print('Co the chon nhieu cam xuc (VD: 1345...)')
-    chon = input('Nhap so de chon cam xuc: ').strip()
+    print(colored("\n5. CHỌN CẢM XÚC", 'yellow', attrs=['bold']))
+    print(colored('   [1] Like 👍', 'white'))
+    print(colored('   [2] Love ❤️', 'white'))
+    print(colored('   [3] Care 💤', 'white'))
+    print(colored('   [4] Haha 🎃', 'white'))
+    print(colored('   [5] WOW 😧', 'white'))
+    print(colored('   [6] Sad 🥹', 'white'))
+    print(colored('   [7] Angry 😡', 'white'))
+    print(colored('   Có thể chọn nhiều cảm xúc (VD: 1345...)', 'green'))
+    chon = input(colored('   Nhập số để chọn cảm xúc: ', 'white')).strip()
     cam_xuc_chon = [ds_cam_xuc[c] for c in chon if c in ds_cam_xuc]
     
     if not cam_xuc_chon:
-        print('Khong co cam xuc nao duoc chon, su dung mac dinh LIKE')
+        print(colored('   Không có cảm xúc nào được chọn, sử dụng mặc định LIKE', 'yellow'))
         cam_xuc_chon = ['LIKE']
     
-
+    # Tạo tên Việt
     vietnamese_names = generate_vietnamese_names()
     
-    thanh_ngang(65)
-    print(f'Bat dau thuc hien {so_nhiem_vu} nhiem vu voi {len(cookies_hop_le)} tai khoan')
-    thanh_ngang(65)
+    print(colored(f"\n6. BẮT ĐẦU THỰC HIỆN", 'cyan', attrs=['bold']))
+    print(colored(f"   Số nhiệm vụ: {so_nhiem_vu}", 'white'))
+    print(colored(f"   Số tài khoản: {len(cookies_hop_le)}", 'white'))
+    print(colored(f"   Delay: {delay} giây", 'white'))
+    print("=" * 60)
     
     stt = 0
     loi_lien_tuc = 0
@@ -737,44 +537,44 @@ def main():
         try:
             cookie = cookies_hop_le[cookie_index]
             tai_khoan = thong_tin_tai_khoan[cookie_index]
-            print(f'Dang su dung tai khoan: {tai_khoan["name"]} (ID: {tai_khoan["id"]})')
+            print(colored(f'Đang sử dụng tài khoản: {tai_khoan["name"]} (ID: {tai_khoan["id"]})', 'cyan'))
             
             fb = Facebook(cookie)
             info = fb.info()
             if info == 'cookieout' or info == '956' or info == '282' or info == 'spam':
-                print(f'Tai khoan {tai_khoan["name"]} gap loi: {info}')
+                print(colored(f'Tài khoản {tai_khoan["name"]} gặp lỗi: {info}', 'red'))
                 cookies_hop_le.pop(cookie_index)
                 thong_tin_tai_khoan.pop(cookie_index)
                 if not cookies_hop_le:
-                    print('Het tai khoan hop le, dung chuong trinh!')
+                    print(colored('Hết tài khoản hợp lệ, dừng chương trình!', 'red'))
                     break
                 cookie_index = cookie_index % len(cookies_hop_le)
                 continue
             
-
+            # Chọn tác vụ ngẫu nhiên
             tac_vu = random.choice(['ket_ban', 'tha_cam_xuc', 'tham_gia_nhom', 'binh_luan'])
             
             if tac_vu == 'ket_ban':
                 ten = random.choice(vietnamese_names)
                 tim_ban = fb.tim_ban(ten)
                 if tim_ban.get('trangthai') == 'thatbai':
-                    print(f'[LOI] Khong tim thay ban voi ten {ten}')
+                    print(colored(f'[LOI] Không tìm thấy bạn với tên {ten}', 'red'))
                     loi_lien_tuc += 1
                 else:
                     ket_ban = fb.ket_ban(tim_ban['id'])
                     if ket_ban.get('trangthai') == 'thanhcong':
                         stt += 1
                         thoi_gian = datetime.now().strftime('%H:%M:%S')
-                        print(f'| {stt} | {thoi_gian} | Them ban | {tim_ban["id"]} | {tim_ban["name"]}')
+                        print(colored(f'| {stt} | {thoi_gian} | Thêm bạn | {tim_ban["id"]} | {tim_ban["name"]}', 'green'))
                         loi_lien_tuc = 0
                     else:
-                        print(f'[LOI] Khong the ket ban voi {tim_ban["name"]}')
+                        print(colored(f'[LOI] Không thể kết bạn với {tim_ban["name"]}', 'red'))
                         loi_lien_tuc += 1
             
             elif tac_vu == 'tha_cam_xuc':
                 bai_viet = fb.lay_id_bai_viet()
                 if bai_viet.get('trangthai') == 'thatbai':
-                    print(f'[LOI] Khong tim thay bai viet')
+                    print(colored(f'[LOI] Không tìm thấy bài viết', 'red'))
                     loi_lien_tuc += 1
                 else:
                     cam_xuc = random.choice(cam_xuc_chon)
@@ -782,33 +582,33 @@ def main():
                     if tha.get('trangthai') == 'thanhcong':
                         stt += 1
                         thoi_gian = datetime.now().strftime('%H:%M:%S')
-                        print(f'| {stt} | {thoi_gian} | Tha cam xuc {cam_xuc} | {bai_viet["idpost"]}')
+                        print(colored(f'| {stt} | {thoi_gian} | Thả cảm xúc {cam_xuc} | {bai_viet["idpost"]}', 'green'))
                         loi_lien_tuc = 0
                     else:
-                        print(f'[LOI] Khong the tha cam xuc cho bai viet {bai_viet["idpost"]}')
+                        print(colored(f'[LOI] Không thể thả cảm xúc cho bài viết {bai_viet["idpost"]}', 'red'))
                         loi_lien_tuc += 1
             
             elif tac_vu == 'tham_gia_nhom':
                 tu_khoa = random.choice(tu_khoa_nhom)
                 nhom = fb.tim_nhom(tu_khoa)
                 if nhom.get('trangthai') == 'thatbai':
-                    print(f'[LOI] Khong tim thay nhom voi tu khoa {tu_khoa}')
+                    print(colored(f'[LOI] Không tìm thấy nhóm với từ khóa {tu_khoa}', 'red'))
                     loi_lien_tuc += 1
                 else:
                     tham_gia = fb.tham_gia_nhom(nhom['id'])
                     if tham_gia.get('trangthai') == 'thanhcong':
                         stt += 1
                         thoi_gian = datetime.now().strftime('%H:%M:%S')
-                        print(f'| {stt} | {thoi_gian} | Tham gia nhom | {nhom["id"]} | {nhom["name"]}')
+                        print(colored(f'| {stt} | {thoi_gian} | Tham gia nhóm | {nhom["id"]} | {nhom["name"]}', 'green'))
                         loi_lien_tuc = 0
                     else:
-                        print(f'[LOI] Khong the tham gia nhom {nhom["name"]}')
+                        print(colored(f'[LOI] Không thể tham gia nhóm {nhom["name"]}', 'red'))
                         loi_lien_tuc += 1
             
             elif tac_vu == 'binh_luan':
                 bai_viet = fb.lay_id_bai_viet()
                 if bai_viet.get('trangthai') == 'thatbai':
-                    print(f'[LOI] Khong tim thay bai viet')
+                    print(colored(f'[LOI] Không tìm thấy bài viết', 'red'))
                     loi_lien_tuc += 1
                 else:
                     noi_dung = random.choice(danh_sach_binh_luan)
@@ -816,32 +616,37 @@ def main():
                     if binh_luan.get('trangthai') == 'thanhcong':
                         stt += 1
                         thoi_gian = datetime.now().strftime('%H:%M:%S')
-                        print(f'| {stt} | {thoi_gian} | Binh luan | {bai_viet["idpost"]} | {noi_dung}')
+                        print(colored(f'| {stt} | {thoi_gian} | Bình luận | {bai_viet["idpost"]} | {noi_dung}', 'green'))
                         loi_lien_tuc = 0
                     else:
-                        print(f'[LOI] Khong the binh luan cho bai viet {bai_viet["idpost"]}')
+                        print(colored(f'[LOI] Không thể bình luận cho bài viết {bai_viet["idpost"]}', 'red'))
                         loi_lien_tuc += 1
             
-
-            if loi_lien_tuc >= 500:
-                print('Qua nhieu loi lien tuc, dung chuong trinh!')
+            # Kiểm tra lỗi liên tục
+            if loi_lien_tuc >= 50:
+                print(colored('Quá nhiều lỗi liên tục, dừng chương trình!', 'red'))
                 break
-           
+            
+            # Chuyển sang cookie tiếp theo
             cookie_index = (cookie_index + 1) % len(cookies_hop_le)
             
-
-            doi_giay(delay)
+            # Delay
+            if stt < so_nhiem_vu:
+                doi_giay(delay)
             
         except Exception as e:
-            print(f'Loi khong xac dinh: {str(e)}')
+            print(colored(f'Lỗi không xác định: {str(e)}', 'red'))
             loi_lien_tuc += 1
             if loi_lien_tuc >= 10:
-                print('Qua nhieu loi lien tuc, dung chuong trinh!')
+                print(colored('Quá nhiều lỗi liên tục, dừng chương trình!', 'red'))
                 break
             doi_giay(delay)
     
-    print(f'\nHoan thanh! Da thuc hien {stt}/{so_nhiem_vu} nhiem vu')
-    print(f'So lan loi: {loi_lien_tuc}')
+    print(colored(f"\nHOÀN THÀNH!", 'cyan', attrs=['bold']))
+    print(colored(f"Đã thực hiện: {stt}/{so_nhiem_vu} nhiệm vụ", 'white'))
+    print(colored(f"Số lần lỗi: {loi_lien_tuc}", 'white'))
+    print("=" * 60)
+    input(colored("Nhấn Enter để thoát...", 'yellow'))
 
 if __name__ == "__main__":
     main()
