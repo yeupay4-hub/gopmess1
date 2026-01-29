@@ -9,8 +9,7 @@ import random
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def create_main_banner():
-    banner = """
+banner = """
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⣷⣜⢿⣧⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠻⣿⣿⣿⣿⣦⠄⠄
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣮⡻⣷⡙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣆⠙⣿⣿⣿⣿⣧⠄
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⣿⣿⣿⣿⣿⣿⣧⢸⣿⣿⣿⡘⢿⣮⡛⣷⡙⢿⣿⡏⢻⣿⣿⣿⣧⠙⢿⣿⣿⣷⠘⢿⣿⣆⢿⣿⣿⣿⣿⣆
@@ -39,18 +38,12 @@ def create_main_banner():
 --------------------------------------------------------------------
                   TOOL TREO MESSENGER BY MDUNG🧸⠀⠀
 --------------------------------------------------------------------
-""".format(time.strftime('%I:%M %p, %d/%m/%Y'))
-    return banner
-
-def create_instructions():
-    instructions = """=====================================================================
+=====================================================================
 ➩ Telegram: https;//t.me/ctevclwar
 ➩ FaceBook 1: https://www.facebook.com/daikafi5
 ➩ FaceBook 2: https://www.facebook.com/profile.php?id=61570431072611
 =====================================================================
 """
-    return instructions
-
 def check_live(cookie):
     try:
         if 'c_user=' not in cookie:
@@ -265,8 +258,7 @@ def start_spam(cookie, account_name, user_id, thread_ids, thread_names, delay, m
 
 def start_multiple_accounts():
     clear()
-    print(create_main_banner())
-    print(create_instructions())
+    print(banner)
     
     try:
         num_accounts = int(input("💠 Nhập số lượng tài khoản Facebook muốn chạy: "))
@@ -370,4 +362,5 @@ def start_multiple_accounts():
 
 if __name__ == "__main__":
     start_multiple_accounts()
+
 
