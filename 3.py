@@ -15,6 +15,20 @@ from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 from rich import box
+import sys
+import subprocess
+
+try:
+    import paho.mqtt.client as mqtt
+except ImportError:
+    subprocess.check_call([
+        sys.executable,
+        "-m",
+        "pip",
+        "install",
+        "paho-mqtt"
+    ])
+    import paho.mqtt.client as mqtt
 
 # Bỏ qua cảnh báo phiên bản
 warnings.filterwarnings("ignore", category=DeprecationWarning)
